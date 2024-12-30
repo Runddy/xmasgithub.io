@@ -1,0 +1,57 @@
+/* Variables CSS para control de imagen */
+:root {
+    --img-width: 730px;
+    --img-height: 730px;
+    --uncensor-width: 250px;
+    --uncensor-height: 150px;
+}
+
+/* Estilos base */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Contenedor principal - nuevo */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Imagen censurada responsive */
+.censor {
+    width: var(--img-width);
+    height: var(--img-height);
+    filter: blur(0px);
+    max-width: 100%;
+    max-height: auto;
+}
+
+/* Máscara con posición ajustable */
+.mask {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+
+/* Área no censurada con controles de tamaño */
+.uncensor {
+    position: absolute;
+    width: var(--uncensor-width);
+    height: var(--uncensor-height);
+    border: 1px solid red;
+    z-index: 999;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: var(--img-width) auto;
+    background-image: url("imgb.png");
+    border-radius: 4px;
+    cursor: move;
+    resize: both;
+    overflow: auto;
+}
+
+/* Media queries para responsividad */
